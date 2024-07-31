@@ -1,0 +1,11 @@
+click==8.1.7
+rich==13.7.1
+console
+langchain==0.2.11
+langchain-chroma==0.1.2
+langchain-community==0.2.10
+langchain-openai==0.1.19
+prompt_toolkit==3.0.47
+InstructorEmbedding==1.0.1
+torch==2.2.2
+sentence_transformers==2.2.2
