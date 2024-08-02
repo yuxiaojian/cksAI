@@ -15,11 +15,7 @@ from config import (
     "-p", "--prompt", help="Initial prompt to start the conversation. (optional)"
 )
 
-"""
-https://github.com/langchain-ai/langchain/issues/10460
-2024-07-31 11:21:11,574 - WARNING - manager.py:293 - Error in RootListenersTracer.on_chain_end callback: ValueError()
-2024-07-31 11:21:11,575 - WARNING - manager.py:335 - Error in callback coroutine: ValueError()
-"""
+
 
 def main(prompt):
     """
@@ -45,3 +41,9 @@ if __name__ == '__main__':
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     
     main()
+
+"""
+https://github.com/langchain-ai/langchain/issues/10460
+2024-07-31 11:21:11,574 - WARNING - manager.py:293 - Error in RootListenersTracer.on_chain_end callback: ValueError()
+2024-07-31 11:21:11,575 - WARNING - manager.py:335 - Error in callback coroutine: ValueError()
+"""
