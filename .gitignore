@@ -1,5 +1,8 @@
 # Byte-compiled / optimized / DLL files
 **/.DS_Store
+assets/DB/cksall/1492db33-de49-43c7-b3a8-9f8f8682329d/data_level0.bin
+assets/DB/cksall/chroma.sqlite3
+
 __pycache__/
 *.py[cod]
 *$py.class

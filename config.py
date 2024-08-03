@@ -4,8 +4,17 @@ from chromadb.config import Settings
 from rich.console import Console
 from rich.padding import Padding
 
+from langchain_community.document_loaders import CSVLoader, PDFMinerLoader, TextLoader, UnstructuredExcelLoader, Docx2txtLoader
+from langchain_community.document_loaders import UnstructuredFileLoader, UnstructuredMarkdownLoader
+from langchain_community.document_loaders import UnstructuredHTMLLoader
+
 # load_dotenv()
 ROOT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
+
+# Define the document source directory
+SOURCE_DIRECTORY = f"{ROOT_DIRECTORY}/../../data/markdown"
+# Can be changed to a specific number
+INGEST_THREADS = os.cpu_count() or 8
 
 PERSIST_DIRECTORY = f"{ROOT_DIRECTORY}/assets/DB/cksall"
 
@@ -18,6 +27,20 @@ CHROMA_SETTINGS = Settings(
     anonymized_telemetry=False,
     is_persistent=True,
 )
+
+# https://python.langchain.com/en/latest/_modules/langchain/document_loaders/excel.html#UnstructuredExcelLoader
+DOCUMENT_MAP = {
+    ".html": UnstructuredHTMLLoader,
+    ".txt": TextLoader,
+    ".md": UnstructuredMarkdownLoader,
+    ".py": TextLoader,
+    ".pdf": UnstructuredFileLoader,
+    ".csv": CSVLoader,
+    ".xls": UnstructuredExcelLoader,
+    ".xlsx": UnstructuredExcelLoader,
+    ".docx": Docx2txtLoader,
+    ".doc": Docx2txtLoader,
+}
 
 # logging config
 logging.basicConfig(

@@ -25,6 +25,16 @@ The agent works best with a testing K8s environment so you can run the command f
 
 You can follow Kim's [CKS course repository](https://github.com/killer-sh/cks-course-environment) to set up a K8s cluster. Kim also showed a 🎥 [video demo](https://youtu.be/d9xfB5qaOfg?t=14642) on how to make the cluster accessible via `kubectl` on your laptop. 
 
+### Merge the Vector DB files
+The vector DB was cut into smaller chunks as there is 50MB file limit. Merge the two files
+```bash
+cd assets/DB/cksall
+cat chroma.sqlite3.* > chroma.sqlite3
+
+cd 1492db33-de49-43c7-b3a8-9f8f8682329d
+cat data_level0.bin.* > data_level0.bin
+```
+
 ### Run the agent
 Switch to the project directory
 ```bash
@@ -48,6 +58,16 @@ You can then start the agent now
 ```bash
 python cks_agent.py
 ```
+
+### Rebuild the Vector DB
+Delete the current vector DB files `assets/DB/cksall`. Specify your data folder `SOURCE_DIRECTORY` in `config.py`
+```bash
+python ingest_batch.py
+
+# Or use "-u" to remove the common path in metadata
+python ingest_batch.py -u
+```
+
 
 ## Built Upon 🧩
 - [LangChain](https://github.com/hwchase17/langchain)
