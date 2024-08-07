@@ -17,6 +17,7 @@ from rich.padding import Padding
 import prompt_toolkit
 #from prompt_toolkit.styles import Style
 
+
 from tool_handler import registry
 from config import (
     CHROMA_SETTINGS,
@@ -35,7 +36,7 @@ class ProposeK8sCommandSchema(BaseModel):
     """
 
     notes: str = Field(
-        description="A short docstring about the command"
+        description="A short description about the command"
     )
     query: str = Field(
         description="A kubectl command that the user can run."
@@ -82,7 +83,7 @@ def get_all_tools(retriever):
         func=k8s_command_run,
         name="ProposeK8sCommand",
 
-        description = "Propose a kubectl command in the terminal. \
+        description = "ONLY Propose a kubectl command in the terminal. \
             The user can either directly execute the command or modify and then run the command.\
             execute the command directly. They will be able to edit it before executing.\
             The command should be properly formatted and can include placeholders for the user to fill in. \

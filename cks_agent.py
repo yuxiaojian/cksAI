@@ -1,6 +1,8 @@
 import os, getpass
 import click
 from cks_core import cksCore
+# from langchain.globals import set_verbose
+# set_verbose(True)
 
 from config import (
     CHROMA_SETTINGS,

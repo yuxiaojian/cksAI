@@ -1,4 +1,7 @@
 # CKS AI Agent
+The Medium article is [A RAG-based CKS AI Agent](https://medium.com/@yuxiaojian/a-rag-based-cks-ai-agent-b36a377b3457)
+
+
 [CKS](https://www.cncf.io/training/certification/cks/)(Certified Kubernetes Security) AI agent is a RAG (Retrieval-Augmented Generation) enabled GPT to assist preparing the [CKS certification](https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/). This agent uses a vector store built from the [CKS allowed resources](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-security-specialist-cks). The agent can answer your questions and is also able to interact with your K8s cluster. 
 
 <p align="center">
