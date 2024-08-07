@@ -77,9 +77,11 @@ python ingest_batch.py -u
 - [HuggingFace LLMs](https://huggingface.co/models)
 - [InstructorEmbeddings](https://instructor-embedding.github.io/)
 - [ChromaDB](https://www.trychroma.com/)
-- [k8sAI](https://github.com/argon-labs/k8sAI)
-- [localGPT](https://github.com/PromtEngineer/localGPT)
 - [Kubernetes CKS Course Environment](https://github.com/killer-sh/cks-course-environment)
+
+## Credits
+- The framework is heavily based on [k8sAI](https://github.com/argon-labs/k8sAI) 
+- The original `ingest.py` is from [localGPT](https://github.com/PromtEngineer/localGPT)
 
 ## Todo
 
